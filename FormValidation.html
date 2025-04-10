@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validation</title>
+</head>
+
+<body>
+
+    <h2>
+        Login Form
+    </h2>
+    <form onsubmit="return validateLogin()">
+        <label>UserName:</label>
+        <input type="text" name="" id="UserName">
+        <br><br>
+
+        <label>Password:</label>
+        <input type="password" name="" id="Password">
+
+        <br><br>
+
+        <input type="submit" name="" id="submit" value="Login">
+        <audio src="" id="audio" autoplay></audio>
+    </form>
+
+    <p id="message"> </p>
+
+    <button onclick="getUserInput()"> DymamicInput </button>
+
+    <script>
+        function getUserInput() {
+            let names = prompt("Please enter your name ?")
+            if (names !== null && names !== "") {
+                alert("Hello HI," + " " + names)
+            } else {
+                alert("No name entred")
+            }
+        }
+    </script>
+
+    <script>
+        function validateLogin() {
+            var usname = document.getElementById("UserName").value;
+            var uspass = document.getElementById("Password").value;
+            var message = document.getElementById("message")
+
+            if (usname == "" || uspass == "") {
+                alert("All fields are required.")
+                message.innerText = "All fields are required."
+
+                return false;
+            } else if (usname == "PROGFTWD07" && uspass == "APPLE") {
+                message.innerText = "Login Successful!"
+                message.style.color = "green";
+                message.style.fontSize = "40px";
+
+                alert("Login successfull")
+
+
+                location.href = "https://progmaster-tech.in/"
+
+
+                return false;
+
+            } else if (usname == "PROGFTWD08" && uspass == "WIN") {
+                message.innerText = "Login Successful!"
+                message.style.color = "green";
+                message.style.fontSize = "40px";
+
+                alert("Login successfull")
+
+
+                location.href = "https://progmaster-tech.in/"
+
+
+                return false;
+            } else {
+                message.innerText = "Invalid Username or Password"
+                message.style.color = "red";
+
+                alert("Invalid Username or Password");
+                return false;
+            }
+        }
+    </script>
+
+
+
+</body>
+
+</html>
